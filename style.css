@@ -7,6 +7,13 @@ body{
   background: url(images/bg.png);
 }
 
+.page{
+  max-width: 1980px;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 1300px;
+}
+
 .header{
   height: 120px;
   background-color: #FFD789;
