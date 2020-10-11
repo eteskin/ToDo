@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>To-do app</title>
+</head>
+<body>
+<div class="header">
+  <div class="logo">
+    <img src="images/logo.png" alt="лого">
+  </div>
+  <div class="hor-menu">
+    <table colspan="2">
+      <tr>
+        <td><a href="#">Главная</a></td>
+        <td><a href="aboutUs.html">О нас</a></td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="main">
+  <div class="main-text">
+  В жизни каждого человека встречаются задачи, которые требуют <br>
+  чёткого планирования и поэтапного выполнения. Ремонт, поиск работы,<br>
+  организация свадьбы, подготовка путешествия, написание книги или сценария<br>
+  — во всех этих и множестве других жизненных ситуациях Вам придёт на выручку наш<br>
+  сервис.
+  </div>
+  <div class="app-manual">
+    <div id="app">
+      <div class="stats">
+        <h3 class="stats__title">{{"Текущих задач: "+ tasks.length}}</h3>
+      </div>
+      <task @task_done="delete_task(index)" :key="index" v-for="(data,index) in tasks" :data="data" ></task>
+      <div class="add_task">
+        <div class="add_task__input ">
+          <input placeholder="Новая задача..." type="text" v-model="new_task.title">
+          <textarea placeholder="Описание" type="text" v-model="new_task.desc"></textarea>
+        </div>
+        <button class="add_task__btn" @click="add_task">➕</button>
+      </div>
+    </div>
+    <div class="manual">
+      <h1>Инструкция</h1>
+      <p>Для работы над задачами необходимо:<br>
+      - Заполнить поле “Новая задача”;<br>
+      - Заполнить поле “Описание”;<br>
+      - Нажать на “➕” чтобы добавить задачу;<br>
+      - Для удаления поставленной задачи Вам необходимо нажать на<br>
+      “✔”, рядом с соответствующим пунктом;</p>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="logo">
+    <img src="images/logo.png" alt="лого">
+  </div>
+  <div class="contacts">
+    yourdiary@inbox.ru <br>
+    vk.com/kraskrit
+  </div>
+</div>
+</body>
+<script src="script.js"></script>
+</html>
